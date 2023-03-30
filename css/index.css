@@ -1,0 +1,154 @@
+/* Cool infinite background scrolling animation.
+ * Twitter: @kootoopas
+ */
+/* Exo thin font from Google. */
+@import url(https://fonts.googleapis.com/css?family=Exo:100);
+/* Background data (Original source: https://subtlepatterns.com/grid-me/) */
+/* Animations */
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,300,500,700,900);
+@-webkit-keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling-reverse {
+  100% {
+    background-position: 50px 50px;
+  }
+}
+@-webkit-keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+@keyframes bg-scrolling {
+  0% {
+    background-position: 50px 50px;
+  }
+}
+/* Main styles */
+.preloader {
+  margin-top: 13.5rem;
+  color: #999;
+  font: 400 16px/1.5 exo, ubuntu, "segoe ui", helvetica, arial, sans-serif;
+  text-align: center;
+  /* img size is 50x50 */
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAIAAACRXR/mAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAABnSURBVHja7M5RDYAwDEXRDgmvEocnlrQS2SwUFST9uEfBGWs9c97nbGtDcquqiKhOImLs/UpuzVzWEi1atGjRokWLFi1atGjRokWLFi1atGjRokWLFi1af7Ukz8xWp8z8AAAA//8DAJ4LoEAAlL1nAAAAAElFTkSuQmCC") repeat 0 0;
+  -webkit-animation: bg-scrolling-reverse 0.92s infinite; /* Safari 4+ */ /* Fx 5+ */ /* Opera 12+ */
+  animation: bg-scrolling-reverse 0.92s infinite; /* IE 10+ */
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+.preloader::before {
+  content: "YOUCEF BENZIANE";
+  font-size: 8rem;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.contacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.contacts .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 450px;
+}
+.contacts .wrap a {
+  text-decoration: none;
+  color: #222;
+  padding: 20px;
+  background: #efefef;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  font-family: "Oswald";
+  margin: 20px;
+  flex-grow: 1;
+  cursor: pointer;
+}
+.contacts .wrap a:before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  top: calc(2px/-1);
+  left: calc(2px/-1);
+  background: linear-gradient(to right, blue 0%, blue 100%), linear-gradient(to top, blue 50%, transparent 50%), linear-gradient(to top, blue 50%, transparent 50%), linear-gradient(to right, blue 0%, blue 100%), linear-gradient(to left, blue 0%, blue 100%);
+  background-size: 100% 2px, 2px 200%, 2px 200%, 0% 2px, 0% 2px;
+  background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+  background-repeat: no-repeat, no-repeat;
+  transition: transform 0.3s ease-in-out, background-position 0.3s ease-in-out, background-size 0.3s ease-in-out;
+  transform: scaleX(0) rotate(0deg);
+  transition-delay: 0.6s, 0.3s, 0s;
+}
+.contacts .wrap a:hover:before {
+  background-size: 200% 2px, 2px 400%, 2px 400%, 55% 2px, 55% 2px;
+  background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+  transform: scaleX(1) rotate(0deg);
+  transition-delay: 0s, 0.3s, 0.6s;
+}
+.contacts .wrap a:nth-of-type(2) {
+  position: relative;
+}
+.contacts .wrap a:nth-of-type(2):before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+  top: calc(4px/-1);
+  left: calc(4px/-1);
+  background: linear-gradient(to right, #222 0%, #222 100%), linear-gradient(to top, #222 50%, transparent 50%), linear-gradient(to top, #222 50%, transparent 50%), linear-gradient(to right, #222 0%, #222 100%), linear-gradient(to left, #222 0%, #222 100%);
+  background-size: 100% 4px, 4px 200%, 4px 200%, 0% 4px, 0% 4px;
+  background-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+  background-repeat: no-repeat, no-repeat;
+  transition: transform 0.2s ease-in-out, background-position 0.2s ease-in-out, background-size 0.2s ease-in-out;
+  transform: scaleX(0) rotate(180deg);
+  transition-delay: 0.4s, 0.2s, 0s;
+}
+.contacts .wrap a:nth-of-type(2):hover:before {
+  background-size: 200% 4px, 4px 400%, 4px 400%, 55% 4px, 55% 4px;
+  background-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+  transform: scaleX(1) rotate(180deg);
+  transition-delay: 0s, 0.2s, 0.4s;
+}
+.contacts .wrap a:nth-of-type(3) {
+  position: relative;
+  align-self: flex-end;
+}
+.contacts .wrap a:nth-of-type(3):before {
+  content: "";
+  position: absolute;
+  width: calc(100% + 20px);
+  height: calc(100% + 20px);
+  top: calc(10px/-1);
+  left: calc(10px/-1);
+  -webkit-mask: linear-gradient(to right, #000 0%, #000 100%), linear-gradient(to top, #000 50%, transparent 50%), linear-gradient(to top, #000 50%, transparent 50%), linear-gradient(to right, #000 0%, #000 100%), linear-gradient(to left, #000 0%, #000 100%);
+          mask: linear-gradient(to right, #000 0%, #000 100%), linear-gradient(to top, #000 50%, transparent 50%), linear-gradient(to top, #000 50%, transparent 50%), linear-gradient(to right, #000 0%, #000 100%), linear-gradient(to left, #000 0%, #000 100%);
+  -webkit-mask-size: 100% 10px, 10px 200%, 10px 200%, 0% 10px, 0% 10px;
+          mask-size: 100% 10px, 10px 200%, 10px 200%, 0% 10px, 0% 10px;
+  -webkit-mask-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+          mask-position: 50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+  -webkit-mask-repeat: no-repeat, no-repeat;
+          mask-repeat: no-repeat, no-repeat;
+  transition: transform 0.4s ease-in-out, -webkit-mask-position 0.4s ease-in-out, -webkit-mask-size 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, mask-position 0.4s ease-in-out, mask-size 0.4s ease-in-out;
+  transition: transform 0.4s ease-in-out, mask-position 0.4s ease-in-out, mask-size 0.4s ease-in-out, -webkit-mask-position 0.4s ease-in-out, -webkit-mask-size 0.4s ease-in-out;
+  transform: scaleX(0) rotate(0deg);
+  transition-delay: 0.8s, 0.4s, 0s;
+  background: linear-gradient(to bottom, #40e0d0, #ff8c00, #ff0080);
+}
+.contacts .wrap a:nth-of-type(3):hover:before {
+  -webkit-mask-size: 200% 10px, 10px 400%, 10px 400%, 55% 10px, 55% 10px;
+          mask-size: 200% 10px, 10px 400%, 10px 400%, 55% 10px, 55% 10px;
+  -webkit-mask-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+          mask-position: 50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+  transform: scaleX(1) rotate(0deg);
+  transition-delay: 0s, 0.4s, 0.8s;
+}
+
