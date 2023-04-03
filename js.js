@@ -11,7 +11,7 @@ navToggle.addEventListener("click",() =>{
     if(visibility==="false"){
         prNav.setAttribute("data-visible",true);
         navToggle.setAttribute("aria-expended",true);
-        navToggle.classList.add("rotate");
+       
     }
     if(visibility==="true"){
         prNav.setAttribute("data-visible",false);
